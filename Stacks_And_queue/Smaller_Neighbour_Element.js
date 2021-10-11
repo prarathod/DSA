@@ -5,7 +5,7 @@ function runProgram(input) {
   let ans = []
   let output = ''
 
-  for (var i = str.length-1; i >=0;i--) {
+  for (var i = str.length-1; i >=1;i--) {
       for(var j = i;j>0;j--){
 
         if(str[i]<str[j]){
