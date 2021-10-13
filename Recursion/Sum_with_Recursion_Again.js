@@ -1,17 +1,28 @@
+
 function runProgram(input) {
-    let arr = input.trim().split(" ").map(Number);
-    let factMulti = function(n){
-        if(n==1|| n ==0){
-            return n;
-        }
-        return factMulti(n-1)+ factMulti(n-2);
+  let arr = input.split("\n");
+  for (var i = 2; i < arr.length; i = 2 + i) 
+    let ar = arr[i].trim().split(" ").map(Number);
+    let len =Number(arr[i-1])
+    sum = 0;
+
+    let find = (ar,len)=> {
+      if(len == 1){
+        return sum;
+      }
+      sum = sum+ Math.abs(ar[len-1]-ar[len-2] )
+      len = len-1
+      return find(ar,len)
     }
-    console.log(factMulti(arr[0]));
-
+    console.log(find(ar,len))
+  }
 }
-
 if (process.env.USERNAME === 'prajw') {
-  runProgram(`4`);
+  runProgram(`2
+3
+1 5 2
+5
+3 5 6 1 8`);
 } else {
   process.stdin.resume();
   process.stdin.setEncoding("ascii");
