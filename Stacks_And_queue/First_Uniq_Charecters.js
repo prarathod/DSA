@@ -22,7 +22,7 @@ function runProgram(input) {
 }
 
 if (process.env.USERNAME === 'prajw') {
-  runProgram(`TuesdayaTu`);
+  runProgram(`TuesdayaTue`);
 } else {
   process.stdin.resume();
   process.stdin.setEncoding("ascii");
