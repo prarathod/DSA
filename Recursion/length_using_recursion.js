@@ -1,29 +1,23 @@
-function sum (arr , n){
-    if(n<=0){
-        return 0;
-    }
-
-    return (sum(arr,n-1)+arr[n-1]);
-}
-
-
 function runProgram(input) {
-   let arr = input.split('\n');
-   for(var i = 2;i<arr.length;i=2+i){
-    let a = arr[i].trim().split(' ').map(Number);
-    console.log(sum(a,a.length))
-   }
+    let str = input.trim()
+    // console.log(str)
+
+    function lenStr(str){
+        if(str ===""){
+            return 0;
+        }else{
+            // console.log(str.substring(1))
+            return 1+ (lenStr(str.substring(1)))
+
+        }
+        
+    }
+    console.log(lenStr(str))
 
 }
 
 if (process.env.USERNAME === 'prajw') {
-  runProgram(`3
-  5
-  6 3 8 2 -4
-  5
-  -10 -7 10 2 -2
-  5
-  -4 -5 6 -3 9`);
+  runProgram(`Tuesday`);
 } else {
   process.stdin.resume();
   process.stdin.setEncoding("ascii");
