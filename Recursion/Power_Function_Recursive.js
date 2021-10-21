@@ -1,5 +1,4 @@
 function power(a,n) {
-    console.log("y")
     if ( n == 0 ) {
         return 1;
     }
