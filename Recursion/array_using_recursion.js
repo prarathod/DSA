@@ -90,4 +90,16 @@ function largestElm(arr , index, elm){
     }
     return largestElm(arr,index+1,elm);
 }
-console.log(largestElm(arr,0,-999900000999))
+// console.log(largestElm(arr,0,-999900000999))
+
+
+
+
+// sum of all elem in an arr
+
+function sum(arr,i){
+if(arr.length==i){
+    return;
+}
+return sum(arr[i]+arr[i+1])
+}
