@@ -103,3 +103,48 @@ if(arr.length==i){
 }
 return sum(arr[i]+arr[i+1])
 }
+
+let n = 16;
+
+function posibleWays(n){
+    if(n==0){
+        return 1;
+    }
+    if(n<0){
+        return 0;
+    }
+
+    return posibleWays(n-4)+posibleWays(n-8);
+}
+// console.log(posibleWays(n))
+
+function steps(n,temp){
+    if(n==0){
+        console.log(temp)
+        return 1;
+    }
+    if(n<0){
+        return 0;
+    }
+    temp.push(n)
+    let a = steps(n-1,temp)
+
+    let b = steps(n-2,temp)
+
+    let c = steps(n-3,temp)
+
+    return a+b+c
+}
+
+// console.log(steps(5,[]))
+
+
+
+function gb(n,r){
+    if(n==0){
+        return 1;
+    }
+
+    return 1/(r**n)+gb(n-1,r);
+}
+console.log(gb(3,5).toFixed(4))
