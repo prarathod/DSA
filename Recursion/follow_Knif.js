@@ -49,7 +49,3 @@ if (process.env.USERNAME === 'prajw') {
     process.exit(0);
   });
 }
-
-
-
-
