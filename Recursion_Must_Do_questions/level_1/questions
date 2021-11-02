@@ -1,0 +1,11 @@
+Must Do questions level one.
+
+1st:- Print 1 to n using recursion.
+
+2nd:- Print n to 0 using recursion.
+
+3rd:- Print even numbers in between 0 to n ;
+
+4th:- Print odd numbers in between n to 0 in assending order;
+
+5th:- Print factorials eg:- 3! => 3 , 3*2 = 6, 3*2*1  = 6
