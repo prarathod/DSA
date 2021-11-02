@@ -63,4 +63,4 @@ function infinate(n){
     console.log(n);
     infinate(n+1);
 }
-infinate(1)
+// infinate(1)
