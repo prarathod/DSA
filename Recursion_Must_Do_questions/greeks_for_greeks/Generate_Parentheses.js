@@ -29,22 +29,17 @@ Constraints:
 
 
 
-
 function _printParenthesis(str, pos, n, open, close) {
     if (close == n) {
-
-        // print the possible combinations
-        let a = ""
-        for (let i = 0; i < str.length; i++)
-        a+=str[i]
-        return console.log(a);
+        count++
+        return console.log(str.join(""));
     } else {
         if (open > close) {
-            str[pos] = '}';
+            str[pos] = ')';
             _printParenthesis(str, pos + 1, n, open, close + 1);
         }
         if (open < n) {
-            str[pos] = '{';
+            str[pos] = '(';
             _printParenthesis(str, pos + 1, n, open + 1, close);
         }
     }
@@ -54,11 +49,29 @@ function _printParenthesis(str, pos, n, open, close) {
 function printParenthesis(str, n) {
     if (n > 0)
         _printParenthesis(str, 0, n, 0, 0);
-    return;
+    return;[]
 }
 
-// Driver program
-var n = 3;
-var str = new Array(2 * n);
-printParenthesis(str, n);
 
+// Driver program
+var n = 5;
+var str = new Array(2 * n);
+// printParenthesis(str, n);
+
+
+function balence(n,pos,op,cl,arr){
+    if(cl===n){
+        return console.log(arr.join(""));
+    }else{
+        if(op>cl){
+            arr[pos]=")";
+            balence(n,pos+1,op,cl+1,arr);
+        }
+        if(op<n){
+            arr[pos]="(";
+            balence(n,pos+1,op+1,cl,arr);
+        }
+    }
+}
+var arr = new Array(1*2)
+balence(1,0,0,0,arr)
