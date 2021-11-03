@@ -64,3 +64,33 @@ function infinate(n){
     infinate(n+1);
 }
 // infinate(1)
+
+function sumNatural(i,n,sum){
+    if(i===n){
+        sum+=i;
+        console.log(sum)
+        return;
+    }
+    sum+=i;
+    sumNatural(i+1,n,sum);
+}
+// sumNatural(1,5,0);
+
+function multiplication(i,n,multi){
+    if(i===n){
+        multi = multi*i;
+        console.log(multi);
+        return;
+    }
+    multi=multi*i;
+    multiplication(i+1,n,multi);
+}
+// multiplication(1,5,1)
+
+function factorial(n){
+    if(n==1){
+        return 1;
+    }
+    return n * factorial(n-1)
+}
+console.log(factorial(4))
