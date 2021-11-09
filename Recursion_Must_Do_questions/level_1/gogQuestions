@@ -18,3 +18,28 @@ Here,   [48]
         [8, 12, 16] -->(8 + 12 = 20, 12 + 16 = 28)
         [3, 5, 7, 9] -->(3 + 5 = 8, 5 + 7 = 12, 7 + 9 = 16)
         [1, 2, 3, 4, 5] -->(1 + 2 = 3, 2 + 3 = 5, 3 + 4 = 7, 4 + 5 = 9)
+
+
+
+2) Recursive Programs to find Minimum and Maximum elements of array;
+Difficulty Level : Easy
+Last Updated : 23 Apr, 2021
+Given an array of integers arr, the task is to find the minimum and maximum element of that array using recursion.
+Input: arr = {1, 4, 3, -5, -4, 8, 6};
+Output: min = -5, max = 8
+
+Input: arr = {1, 4, 45, 6, 10, -8};
+Output: min = -8, max = 45
+
+
+3rd:- First uppercase letter in a string (Iterative and Recursive)
+Difficulty Level : Basic
+Last Updated : 26 Apr, 2021
+Given a string find its first uppercase letter
+Examples : 
+
+Input : geeksforgeeKs
+Output : K
+
+Input  : geekS
+Output : S
