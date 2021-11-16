@@ -1,0 +1,9 @@
+nav{
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    font-size: 190%;
+}

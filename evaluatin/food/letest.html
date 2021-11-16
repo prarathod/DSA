@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="style.css"/>
+
+<body>
+   
+    <div id="detailss">
+</div>
+</body>
+</html>
+
+<script type="module">
+    import navbar from "./components/dish.js";
+    let div=document.createElement("div")
+div.innerHTML=navbar();
+document.body.prepend(div);
+
+
+
+
+   import {getdata,append} from "./scripts/dishes.js";
+ //let name=search();
+ 
+  
+
+    </script>
+   <script>
+       search()
+async function search(){
+    
+    let res=await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772`);
+    let data=await res.json();
+   console.log("data" ,data)
+
+    let resss=data.meals;
+    
+let place=document.getElementById("detailss")
+place.innerHTML=null;
+    resss.forEach(el => {
+        console.log(el)
+    let div=document.createElement('div');
+    let p_name=document.createElement('p');
+    let p_type=document.createElement('p');
+    let p_ingredients=document.createElement('p');
+    let img=document.createElement('img');
+img.src=el. strMealThumb;
+    p_type.innerHTML=`Dish Type :${el.strArea}`;
+    p_name.innerHTML=`Dish name :${el.strMeal}`;
+    p_ingredients.innerHTML=`INGRIDIENTS :${el.strIngredient1},${el.strIngredient2},${el.strIngredient3},${el.strIngredient4},${el.strIngredient5},${el.strIngredient6},${el.strIngredient7},${el.strIngredient8},${el.strIngredient9},${el.strIngredient11},${el.strIngredient12},${el.strIngredient13}`;
+
+
+
+    div.append(img,p_name,p_type,p_ingredients);
+    div.setAttribute('id','nameS');
+place.append(div);
+});
+}
+        
+   </script>
