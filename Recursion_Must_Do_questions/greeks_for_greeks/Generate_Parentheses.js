@@ -59,19 +59,3 @@ var str = new Array(2 * n);
 // printParenthesis(str, n);
 
 
-function balence(n,pos,op,cl,arr){
-    if(cl===n){
-        return console.log(arr.join(""));
-    }else{
-        if(op>cl){
-            arr[pos]=")";
-            balence(n,pos+1,op,cl+1,arr);
-        }
-        if(op<n){
-            arr[pos]="(";
-            balence(n,pos+1,op+1,cl,arr);
-        }
-    }
-}
-var arr = new Array(1*2)
-balence(1,0,0,0,arr)

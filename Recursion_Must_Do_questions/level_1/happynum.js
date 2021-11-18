@@ -4,7 +4,7 @@ var obj = {}
 function type(arr,i=1){
 if(i==arr.length){
    
-    return Object.entries(obj).sort().join(",");
+    return Object.entries(obj).sort();
 }
 let a = arr[i].split("");
 let char = a[0]

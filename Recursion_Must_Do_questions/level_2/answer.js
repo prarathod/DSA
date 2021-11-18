@@ -13,4 +13,14 @@ function towerOfHanoi(n, from_rod,  to_rod,  aux_rod)
     }
  
     var n = 4; // Number of disks
-    towerOfHanoi(n, 'A', 'C', 'B');
+    // towerOfHanoi(n, 'A', 'C', 'B');
+
+
+    function inAndec(n){
+        if(n==1){
+            return n;
+        }
+        return n * inAndec(n-1)
+        
+    }
+    console.log(inAndec(3))

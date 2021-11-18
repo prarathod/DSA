@@ -112,4 +112,17 @@ function index(arr , target , i){
     }
     return index(arr,target,i+1)
 }
-console.log(index([1,2,3,4,5,6,7,8,9],1,0))
+// console.log(index([1,2,3,4,5,6,7,8,9],1,0))
+
+function printStar(n){
+    let m = n
+    for(var i = 0; i<=n;i++){
+        let arr = []
+        for(let j = m;j>=1;j--){
+            arr.push("*")
+        }
+        m--;
+        console.log(arr.join(" "))
+    }
+}
+// printStar(4)
