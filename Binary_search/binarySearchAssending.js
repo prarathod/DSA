@@ -80,3 +80,27 @@ function nearest(arr, target){
     return result;
 }
 // console.log(nearest([1,2,2,2,2,2,2,2],2))
+
+
+
+function longest(arr,target){
+    let start = 0;
+    let end = arr.length-1;
+    let result = -1;
+    while(start<=end){
+        let mid = start + Math.floor((end-start)/2);
+        if(arr[mid]==target){
+            result = mid;
+            start = mid+1;
+        }
+        if(arr[mid]<target){
+            start = mid+1;
+        }
+        if(arr[mid]>target){
+            end = mid -1;
+        }
+    }
+    return result;
+}
+
+console.log(longest([1,1,1,1,1,1,2,3,4,4,4,6,7,8,9],1))
