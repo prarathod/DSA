@@ -214,4 +214,30 @@ function floor(arr,target){
     }
     return result;
 }
-console.log(floor([1,2,2,3,4,6,6,7,8,9,23,34,6546],23.4))
+// console.log(floor([1,2,2,3,4,6,6,7,8,9,23,34,6546],0.1))
+
+
+
+// ceil number 
+function ceil(arr,target){
+    let start = 0; 
+    let end = arr.length-1;
+    let result = -1;
+
+    while(start<=end){
+        let mid = Math.floor(start+ ((end-start)/2))
+        if(arr[mid]==target){
+            return arr[mid];
+        }
+        if(arr[mid]<target){
+            start = mid+1;
+        }
+        if(arr[mid]>target){
+            result = arr[mid];
+            end = mid-1;
+        }
+    }
+    return result;
+}
+
+console.log(ceil([1,2,3,4,5,5,6,6,6,7,8,9],5.1))
