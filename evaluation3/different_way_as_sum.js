@@ -1,6 +1,25 @@
+function sum(num){
+    // console.log(num)
+    if(num==0 || num ==1){
+        return 1;
+    }
+    if(num<0){
+        return 0;
+    }
+
+    let total = (sum(num-1))+(sum(num-3))+(sum(num-4));
+ 
+    return total;
+}
+
+
+
+
+
+
 function runProgram(input) {
     let a = input.trim().split(" ").map(Number);
-    console.log(a)
+    console.log(sum(a[0]))
 
 
 }
