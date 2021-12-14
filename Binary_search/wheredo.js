@@ -46,14 +46,14 @@ function runProgram(input) {
         let arr = a[i].trim().split(" ").map(Number)
         let target = a[i-1].trim().split(" ").map(Number)
         let result = floor(arr,target[0])
-        let result1 = ceil(arr,target)
-        // console.log(result1)
+        // let result1 = ceil(arr,target)
+        
         if(result==-1){
             console.log(`Front ${arr[0]}`)
         }else if(result1==-1){
             console.log(`Last ${arr[arr.length-1]}`)
         }else{
-            console.log(arr[result]+" "+arr[result1])
+            console.log(arr[result]+" "+arr[result+1])
         }
     }
     
@@ -85,7 +85,3 @@ if (process.env.USERNAME === 'prajw') {
         process.exit(0);
     });
 }
-
-
-
-
