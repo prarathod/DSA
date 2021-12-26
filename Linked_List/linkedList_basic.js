@@ -1,15 +1,37 @@
-// 1st node.
-class Node{
-    constructor(element,score,age){
-        this.element =  element;
+class Node {
+    constructor(element){
+        this.element = element;
         this.next = null;
     }
 }
 
 class LinkedList{
+    constructor(){
+        this.head = null;
+        this.size = 0;
+    }
+
+    // methods;
+    add(element){
+        var node = new Node(element);
+        // if linked list is empty 
+        if(!this.head){
+            this.head = node;
+        }else{
+            var current = this.head;
+            while(current.next){
+                current = current.next;
+            }
+            current.next = node;
+        }
+        this.size++;
+    }
 
 }
 
-
-const elem = new Node(6);
-console.log(elem)
+var list = new LinkedList();
+list.add(2)
+list.add(3)
+list.add(5)
+list.add(4)
+console.log(list)
