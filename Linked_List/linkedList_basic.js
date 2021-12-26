@@ -1,6 +1,6 @@
-class Node {
-    constructor(elm,next=null){
-        this.data = elm;
+class Node{
+    constructor(data,next=null){
+        this.data = data;
         this.next = next;
     }
 }
@@ -10,14 +10,37 @@ class LinkedList{
         this.head = null;
         this.size = 0;
     }
-    add(data){
-        this.head = new Node(data,this.head);
+    addFront(elm){
+        this.head = new Node(elm,this.head);
         this.size++;
+    }
+
+    addLast(elm){
+        let node = new Node(elm)
+        if(this.head==null){
+            this.head = node
+        }else{
+            let current = this.head;
+            while(current.next){
+                current = current.next;
+            }
+            current.next = node;
+        }
+        this.size++;
+    }
+
+    printList(){
+        let current = this.head;
+        while(current){
+            console.log(current.data);
+            current = current.next;
+        }
     }
 }
 
-const ll = new LinkedList();
-ll.add(5)
-ll.add(7)
-ll.add(9)
-console.log(ll)
+let list = new LinkedList()
+list.addFront(8);
+list.addLast(7)
+list.addFront(9);
+list.addLast(10)
+list.printList()
