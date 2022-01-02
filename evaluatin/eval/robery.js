@@ -1,23 +1,25 @@
 
 function robery(ar){
     let output = 0;
-
+    let output1 = 0;
 
     for(var i = 0 ; i<ar.length;i=2+i){
-        // if(ar.length%2==0){
-            if(ar[i]<ar[i+1]){
-                output += ar[i+1];
-                i++;
-            }else{
-                output+=ar[i];
-            }
-        // }else{
-            
-
-        // }
-
+        if(ar[i]<ar[i+1]){
+            output += ar[i+1];
+            i++;
+        }else{
+            output+=ar[i];
+        }      
     }
-    return output
+
+    for(var j =0;j<ar.length;j= 2+j){
+        output1+=ar[j]
+    }
+    if(output>output1){
+    return Math.abs(output);
+    }else{
+        return Math.abs(output1);
+    }
 }
 
 
@@ -39,7 +41,7 @@ if (process.env.USERNAME === 'prajw') {
     3
     2 100 99
     4
-    100 1 1 100`);
+    -100 1 1 -100`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");

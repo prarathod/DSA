@@ -16,10 +16,20 @@ class LinkedList {
     }
     print() {
         let current = this.head;
+        let output = ""
         while (current) {
-            console.log(current.data);
+            output+=current.data;
             current = current.next;
         }
+        console.log(output)
+    }
+    addLast() {
+        let current = this.head;
+        while (current.next) {
+            current = current.next;
+        }
+        current.data = Number(current.data + 1);
+
     }
 
 }
@@ -31,18 +41,19 @@ ll.addFirst(3)
 ll.addFirst(4)
 ll.addFirst(5)
 ll.addFirst(6)
-
-// ll.print();
+ll.addLast();
+// console.log(ll)
+ll.print();
 // console.log(ll)
 
 
-// function reverse(head) {`
+// function reverse(head) {
 //     let prev = null;
 //     let next = null;
 
 //     while (head !== null) {
-//         console.log("head: ",head.Node.data)
-//         next = head.next;
+//         // console.log("head: ",head.data)
+//         next = this,head.next;
 //         head.next = prev;
 //         prev = head;
 //         head = next;
@@ -50,16 +61,15 @@ ll.addFirst(6)
 //     return prev;
 // }
 
-// console.log(reverse(ll))
 
-function reverse1(head) {
-    if (head == null || head.next == null){
-        return head;
-    }
-    var rest = reverse(head.next);
-    head.next.next = head;
-    head.next = null;
-    return rest;
-}
+// function reverse1(head) {
+//     if (head == null || head.next == null){
+//         return head;
+//     }
+//     let rev = reverse(head.next);
+//     head.next.next = head;
+//     head.next = null;
+//     return rev;
+// }
 // ll.print()
-console.log(reverse1(ll));
+// console.log(reverse1(ll));
