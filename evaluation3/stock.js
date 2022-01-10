@@ -17,7 +17,7 @@ function stock(arr){
                 while(arr[i]>=stack[stack.length-1] && stack.length!==0){
                     k++;
                     stack.pop();
-                }k++
+                }
                 stack.push(arr[i]);
                
                 span.push(span[span.length-1]+k);
