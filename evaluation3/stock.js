@@ -13,10 +13,8 @@ function stock(arr){
         }else{
             
             if(arr[i]>=stack[stack.length-1]){
-                // console.log("arr[i]: ",arr[i], "span: ", span, "stack :",stack)
+              let a = 1;
                 while(arr[i]>=stack[stack.length-1] && stack.length!==0){
-                    k++;
-                    stack.pop();
                 }
                 stack.push(arr[i]);
                
