@@ -1,39 +1,33 @@
 
-function evenorodd(arr,val){
-    let even ='';
-    let odd = '';
-    arr.forEach((elm)=>{
-        if(elm%2==0){
-            even+=elm+" ";
-        }else{
-            odd+=elm+" ";
-        }
-    });
-    if(val==1){
-        return even+odd;
+function localMaxima(arr){
+    let count =0;
+    if(arr.length<3){
+        return -1;
     }else{
-        return odd+even;
+        for(var i = 1;i<arr.length-1;i++){
+            if(arr[i]>arr[i-1]&&arr[i]>arr[i+1]){
+                count++;
+            }
+        }
     }
+    return count;
  
 }
 
 function runProgram(input) {
     let input1 = input.split("\n");
-    for(var i =2;i<input1.length;i=3+i){
+    for(var i =2;i<input1.length;i=2+i){
        let arr = input1[i].trim().split(" ").map(Number);
-       let num = Number(input1[i+1])
-       console.log(evenorodd(arr,num))
+       console.log(localMaxima(arr))
     }
 }
 
 if (process.env.USERNAME === 'prajw') {
     runProgram(`2
-    5
-    1 2 3 4 5
-    1
-    5
-    1 2 3 4 5
-    2`);
+    2
+    1 2
+    10
+    884 729 768 201 266 494 597 328 705 287`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");
