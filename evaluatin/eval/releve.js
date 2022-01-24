@@ -1,4 +1,4 @@
-function runProgram(input) {
+function props(input){
     let a = input.trim().split(" ").map(Number);
     let n = a[1];
     let count = 0;
@@ -7,11 +7,12 @@ function runProgram(input) {
             count++;
         }
     }
-    console.log(count)
-
-
+    return output;
 }
 
+function runProgram(input) {
+    props(input)
+}
 if (process.env.USERNAME === 'prajw') {
     runProgram(`1 3`);
 } else {
