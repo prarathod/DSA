@@ -61,3 +61,24 @@ if (process.env.USERNAME === 'prajw') {
     });
 }
 
+
+let output = [];
+const lot = (pr, lv) => {
+    if (!pr) {
+        // console.log(pr)
+        return;
+    }
+    if (!output[lv]) {
+        // console.log(output[lv],[pr.val])
+        output[lv] = [pr.val];
+    } else {
+        // console.log(output[lv],pr.val)
+        output[lv].push(pr.val);
+        
+    }
+    lot(pr.left, (lv + 1));
+    lot(pr.right, (lv + 1));
+}
+
+lot(root, 0);
+return output;
