@@ -1,7 +1,7 @@
 
 function runProgram(input) {
     let a = input.split("\n");
-    let ar  = a[0].trim().split(" ").map(Number);
+    let ar  = a[0].trim().split(" ").map(Number)[0];
     let arr  = a[1].trim().split(" ").map(Number);
     let fnum = 0;
     let lnum = 0;
