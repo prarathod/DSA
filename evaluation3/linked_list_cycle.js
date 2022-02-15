@@ -1,10 +1,10 @@
 var hasCycle = function(head) {
-    let pr = head;
-    let nxt = head;
-   while (pr && pr.next) {
-       pr = pr.next.next;
-       nxt = nxt.next;
-       if (pr == nxt) {
+    let start = head;
+    let end = head;
+   while (start && start.next) {
+       start = start.next.next;
+       end = end.next;
+       if (start == end) {
            return true;
        }
    }
