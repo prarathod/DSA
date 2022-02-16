@@ -1,4 +1,8 @@
 // let str = 'abcaacab'; 
+//O(N) => O(N/2)
+
+
+
 
 // return number of a ;
 
@@ -14,21 +18,28 @@
 // i = 0 = > a 
 // i = 0 = > a 
 
+str.length = even = 4 ,6;
+str.length = odd = 5 ,7;
+
+
+// abcaacab => sot() => aaaabbcc
+
+// let num = 4;
+// let tempnum = ;
+// let cut a ;
+// let temp ="b"; 
+
+
+
+
 function count(str,tar){
-    let target = tar;
-    let num =0;
 
-    for(var i = 0 ;i<str.length;i++){
-        if(str[i]==target){
-            num++;
-        }
-    }
 
-    if(num==0){
-        return -1;
-    }else{
-        return num;
-    }
+
+
 }
 
 console.log(count("abcaacab",'z'));
+
+
+//T.C => O(N/2);

@@ -7,19 +7,18 @@ function runProgram(input) {
     let end = arr.length - 1;
     let output = 0;
 
-    while(start<=end){
-        let mid = Math.floor(start+((end-start)/2));
-
-        if((arr[mid]<arr[mid+1]&& arr[mid]<arr[mid-1])||(arr[mid]<arr[mid+1]&& arr[mid-1]==undefined)||(arr[mid+1]==undefined&& arr[mid]<arr[mid-1])){
+    while (start <= end) {
+        let mid = Math.floor(start + ((end - start) / 2));
+        if ((arr[mid] < arr[mid + 1] && arr[mid] < arr[mid - 1]) || (arr[mid] < arr[mid + 1] && arr[mid - 1] == undefined) || (arr[mid + 1] == undefined && arr[mid] < arr[mid - 1])) {
             output = mid;
             break;
-        }else if(arr[mid]>arr[end]){
-            start = mid+1;
+        } else if (arr[mid] > arr[end]) {
+            start = mid + 1;
             output = mid;
-        }else if(arr[mid]>arr[start]){
-            end = mid-1;
+        } else if (arr[mid] > arr[start]) {
+            end = mid - 1;
             output = mid;
-        }else{
+        } else {
             end = mid;
             output = mid;
         }
