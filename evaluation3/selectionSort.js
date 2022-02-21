@@ -1,20 +1,21 @@
 
-function change(arr, mid, i) {
-    var temp = arr[mid];
-    arr[mid] = arr[i];
-    arr[i] = temp;
-}
-const sum=(arr,k)=>{
-    let n = arr.length-1;
+const sum = (arr, k) => {
+    let num = arr.length - k;
     let max = 0;
     let min = 0;
-    for(var i = 0;i<k;i++){
+    let i = 0;
+    let j = arr.length-1;
+    while(num>0){
+        max+=arr[j];
         min+=arr[i];
-        max+=arr[n];
-        n--;
+        j--;
+        i++;
+        num--;
     }
-    return max-min;
+
+    return max-min;;
 }
+
 function runProgram(input) {
     let a = input.split("\n");
     for (let k = 2; k < a.length; k = 2 + k) {
@@ -22,17 +23,20 @@ function runProgram(input) {
         let arr = a[k].trim().split(" ").map(Number);
         let i;
         let j;
-        let mid;
+        let cen;
         for (i = 0; i < arr.length - 1; i++) {
-            mid = i;
-            for (j = i + 1; j < arr.length; j++)
-                if (arr[j] < arr[mid]) {
-                    mid = j;
+            cen = i;
+            for (j = i + 1; j < arr.length; j++) {
+                if (arr[j] < arr[cen]) {
+                    cen = j;
                 }
-            change(arr, mid, i);
+                let temp = arr[cen];
+                arr[cen] = arr[i];
+                arr[i] = temp;
+            }
         }
 
-        console.log(sum(arr,s1))
+        console.log(sum(arr, s1))
     }
 
 
