@@ -1,18 +1,34 @@
+let arr = [6, 3, 9, 5, 2, 8];
+let n = arr.length;
+
+function partition(arr, low, high) {
+    let pivot = arr[high];
+    let i = low - 1;
+    for (let j = low; j < high; j++) {
+        if (arr[j] > pivot) {
+            i++;
+            // swap
+            let temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+    }
+    i++;
+    let temp = arr[i];
+    arr[i] = pivot;
+    arr[high] = temp;
+    return i; //pivot index;
+}
 
 
-
-
-let arr = [0,0,0,0,1,0]
-let putput = 0;
-for(let i =0;i<arr.length;){
-    if(arr[i+2]==0){
-        i+=2;
-        putput++;
-    }else{
-        i++;
-        putput++;
+function quick(arr, low, high) {
+    if (low < high) {
+        let pivot = partition(arr, low, high);
+        quick(arr, low, pivot - 1);
+        quick(arr, pivot + 1, high);
     }
 }
 
-console.log(putput - 1);
+quick(arr, 0, n - 1);
 
+console.log(arr);
