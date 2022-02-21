@@ -1,0 +1,15 @@
+<script>
+    c=20
+function outer(){
+var a=10
+
+    return function inner(){
+            b=20;
+        return a
+
+    }
+}
+
+console.log(outer())
+
+</script>

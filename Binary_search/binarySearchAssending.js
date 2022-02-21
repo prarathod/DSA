@@ -227,13 +227,13 @@ function ceil(arr,target){
     while(start<=end){
         let mid = Math.floor(start+ ((end-start)/2))
         if(arr[mid]==target){
-            return arr[mid];
+            return mid;
         }
         if(arr[mid]<target){
             start = mid+1;
         }
         if(arr[mid]>target){
-            result = arr[mid];
+            result = mid;
             end = mid-1;
         }
     }
