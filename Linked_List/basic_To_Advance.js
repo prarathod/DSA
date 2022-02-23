@@ -1,137 +1,92 @@
-class Node{
-    constructor(data,next=null){
-        this.data = data;
-        this.next = next;
-    }
-}
-class LinkedList{
-    constructor(){
-        this.head = null;
-        this.size = 0;
-    }
-
-// Add node;
-    /*
-        Insert first node;
-        Insert last node;
-        Insert at index;
-    */ 
-    insertFirst(data){
-        this.head = new Node(data,this.head);
-        this.size++;
-    }
-
-    insertLast(data){
-        let node = new Node(data);
-        let current;
-        if(this.head==null){
-            this.head = node;
-        }else{
-            current = this.head;
-            while(current.next){
-                current = current.next;
-            }
-            current.next = node;
-            
-        }
-        this.size++;
-    }
-
-    insertAt(data,index){
-        // 1. if index is ourt of range
-        if(index>0 && index>this.size){
-            return;
-        }
-
-        //2. if index is first index;
-        if(index===0){
-            this.insertFirst(data);
-            return;
-        }
-
-        const node = new Node(data);
-        let current,previous;
-        let count =0;
-
-       //set current to first 
-       while(coun<index){
-           previous ==current; //node before index
-           count++;
-           current = current.next;
-       }
-       node.next = current;
-       previous.next = node;
-       this.size++;
-    }
-
-
-// Get at index;
-    getAtIndex(index){
-        if(index>=this.size){
-            console.log("your index is",index,"and size is",this.size)
-            return;
-        }
-        let count =0;
-        let current = this.head;
-        while(count<index){
-            current = current.next;
-            count++;
-        };
-        console.log(current.data);
-    }
-
-//  Remove at index;
-//  clear list;
-
-// Print list data;
-    printListData(){
-        let current = this.head;
-        console.log(this.head)
-        while(current){
-            console.log(current.data);
-            current = current.next;
-        }
-    }
-}
-
-const ll = new LinkedList()
-// console.log(ll);
-ll.insertFirst(5)
-// console.log(ll)
-ll.insertFirst(6)
-
-ll.insertLast(2)
-// console.log(ll)
-// ll.printListData();
-ll.getAtIndex(3)
-
-
-
-
-
-
-
-
 // class Node{
 //     constructor(data,next=null){
 //         this.data = data;
 //         this.next = next;
 //     }
 // }
-
 // class LinkedList{
 //     constructor(){
-//         this.head =null;
+//         this.head = null;
 //         this.size = 0;
 //     }
 
-//     insert(data){
+// // Add node;
+//     /*
+//         Insert first node;
+//         Insert last node;
+//         Insert at index;
+//     */ 
+//     insertFirst(data){
 //         this.head = new Node(data,this.head);
 //         this.size++;
 //     }
 
-//     print(){
+//     insertLast(data){
+//         let node = new Node(data);
+//         let current;
+//         if(this.head==null){
+//             this.head = node;
+//         }else{
+//             current = this.head;
+//             while(current.next){
+//                 current = current.next;
+//             }
+//             current.next = node;
+            
+//         }
+//         this.size++;
+//     }
+
+//     insertAt(data,index){
+//         // 1. if index is ourt of range
+//         if(index>0 && index>this.size){
+//             return;
+//         }
+
+//         //2. if index is first index;
+//         if(index===0){
+//             this.insertFirst(data);
+//             return;
+//         }
+
+//         const node = new Node(data);
+//         let current,previous;
+//         let count =0;
+
+//        //set current to first 
+//        while(coun<index){
+//            previous ==current; //node before index
+//            count++;
+//            current = current.next;
+//        }
+//        node.next = current;
+//        previous.next = node;
+//        this.size++;
+//     }
+
+
+// // Get at index;
+//     getAtIndex(index){
+//         if(index>=this.size){
+//             console.log("your index is",index,"and size is",this.size)
+//             return;
+//         }
+//         let count =0;
 //         let current = this.head;
+//         while(count<index){
+//             current = current.next;
+//             count++;
+//         };
+//         console.log(current.data);
+//     }
+
+// //  Remove at index;
+// //  clear list;
+
+// // Print list data;
+//     printListData(){
+//         let current = this.head;
+//         console.log(this.head)
 //         while(current){
 //             console.log(current.data);
 //             current = current.next;
@@ -139,9 +94,4 @@ ll.getAtIndex(3)
 //     }
 // }
 
-// let ll = new LinkedList()
 
-// ll.insert(5)
-// ll.insert(6)
-// // console.log(ll)
-// ll.print();
