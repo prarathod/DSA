@@ -83,15 +83,28 @@
 // //  Remove at index;
 // //  clear list;
 
-// // Print list data;
-//     printListData(){
-//         let current = this.head;
-//         console.log(this.head)
-//         while(current){
-//             console.log(current.data);
-//             current = current.next;
-//         }
-//     }
-// }
+
+
+class Node {
+    constructor(data,next=null,prev){
+        this.data = data;
+        this.prev = data;
+        this.next = next;
+    }
+}
+
+class LL{
+    constructor() {
+        this.head =null;
+        this.size =0;
+    }
+    add(data){
+        this.head = new Node(data,this.head,this.head)
+    }
+}
+let l = new LL()
+l.add(4);
+l.add(8)
+console.log(l)
 
 
