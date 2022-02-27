@@ -1,14 +1,18 @@
-function fun(n, num =1){
-    console.log(n,num)
-    if(num>n){
-        console.log("num:- ",n,num)
-        return false;
-    }
-    if(num ==n){
-        return true;
+let num =2;
+// ()()
+
+function cond(str,n,open,close){
+    
+    if(str.length==2*n){
+        
+        return console.log(str);
     }
 
-    return fun(n,num*10) || fun(n,num*20);
+    if(open<n){
+        return cond(str+="(",n,open=open+1,close);
+    }
+    if(close<open){
+        return cond(str+=")",n,open,close=close+1);
+    }
 }
-
-console.log(fun(10))
+cond("",2,0,0);
