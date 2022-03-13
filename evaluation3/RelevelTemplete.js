@@ -32,12 +32,3 @@ class Main
 		// your code goes here
 	}
 }
-
-
-
-
-
-
-
-
-
