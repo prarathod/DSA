@@ -11,6 +11,10 @@ function power(num) {
     return 1;
 }
 
+1. check the given number zero or not if it is zero return false.
+2. if given number is not zero then place the number inside a while loop. this loop runs if number is not equel to 1.
+3. now if number %2 not equeal to zero then it return zero
+else it will devide number /2;
 
 function runProgram(input) {
     let inp = input.split("\n").map(Number);
