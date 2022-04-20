@@ -1,54 +1,35 @@
 <script>
 
-    // Javascript implementation of efficient
-    // algorithm to find smaller element on left side
-    
-    // Prints smaller elements on left
-    // side of every element
-    function printPrevSmaller(arr, n)
-    {
-        
-        // Create an empty stack
+
+    function printPrevSmaller(arr, n) {
+
         let S = [];
-    
-        // Traverse all array elements
-        for(let i = 0; i < n; i++)
-        {
-            
-            // Keep removing top element from S
-            // while the top element is greater
-            // than or equal to arr[i]
+
+        for (let i = 0; i < n; i++) {
+
             while ((S.length != 0) &&
-                (S[S.length - 1] >= arr[i]))
-            {
+                (S[S.length - 1] >= arr[i])) {
                 S.pop();
             }
-    
-            // If all elements in S were
-            // greater than arr[i]
-            if (S.length == 0)
-            {
+
+            if (S.length == 0) {
                 document.write("-1, ");
             }
-            
-            // Else print the nearest smaller element
-            else
-            {
+
+            else {
                 document.write(S[S.length - 1] + ", ");
             }
-    
-            // Push this element
+
             S.push(arr[i]);
         }
     }
-    
-    // Driver code
-    let arr = [ 39, 27, 11, 4 ,24, 32, 32, 1 ];
+
+
+    let arr = [39, 27, 11, 4, 24, 32, 32, 1];
     let n = arr.length;
-    
+
     printPrevSmaller(arr, n);
-    
-    // This code is contributed by divyeshrabadiya07
-    
-    </script>
-    
+
+
+
+</script>
